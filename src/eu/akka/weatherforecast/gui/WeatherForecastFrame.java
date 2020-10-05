@@ -96,7 +96,7 @@ public class WeatherForecastFrame extends JFrame implements Observer{
 			Color foregroundColor = Color.decode(PropertiesProvider.getInstance().getPropertyValue("window.foreground.color"));
 			Color highLightColor = Color.decode(PropertiesProvider.getInstance().getPropertyValue("window.highlight.color"));
 			
-			setTitle(windowTitle + " - V" + widgetVersion);
+			setTitle(windowTitle + " - v" + widgetVersion);
 			setSize(windowWidth, windowHeight);
 			
 			panel.setBackground(backgroundColor);
