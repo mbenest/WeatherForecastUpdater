@@ -1,0 +1,5 @@
+eu.akka.weatherforecast
+eu.akka.weatherforecast.gui
+eu.akka.weatherforecast.gui.widgets
+eu.akka.weatherforecast.http
+eu.akka.weatherforecast.utils
