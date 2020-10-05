@@ -31,7 +31,7 @@ public class WeatherForcastPanel extends JPanel {
 	/**
 	 * Paint component.
 	 *
-	 * @param g the graphic
+	 * @param g the graphics
 	 */
 	@Override
     public void paintComponent(Graphics g) {
