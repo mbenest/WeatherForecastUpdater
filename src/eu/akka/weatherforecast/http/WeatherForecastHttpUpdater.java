@@ -49,26 +49,26 @@ public class WeatherForecastHttpUpdater extends Observable{
 		 TimerTask repeatedTask = new TimerTask() {
 		        public void run() {
 		        	try {
-						HttpURLConnection connection =  (HttpURLConnection) new URL(scriptUrl).openConnection();
-						connection.setConnectTimeout(2000);
-						connection.setReadTimeout(2000);
-						
-						if (connection.getResponseCode() == 200) {
-							BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-							String value =  reader.lines().collect(Collectors.joining(System.lineSeparator())).trim();
-							result = Integer.valueOf(value);
-							setChanged();
-							notifyObservers(result);
-						}else {
-							result = -1;
-							setChanged();
-							notifyObservers(result);
-						}
-					} catch (IOException e) {
+					HttpURLConnection connection =  (HttpURLConnection) new URL(scriptUrl).openConnection();
+					connection.setConnectTimeout(2000);
+					connection.setReadTimeout(2000);
+
+					if (connection.getResponseCode() == 200) {
+						BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+						String value =  reader.lines().collect(Collectors.joining(System.lineSeparator())).trim();
+						result = Integer.valueOf(value);
+					}else {
 						result = -1;
-						setChanged();
-						notifyObservers(result);
 					}
+					
+					setChanged();
+					notifyObservers(result);
+					
+				} catch (IOException e) {
+					result = -1;
+					setChanged();
+					notifyObservers(result);
+				}
 		        }
 		    };
 		    Timer timer = new Timer("Timer");
