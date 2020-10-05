@@ -28,6 +28,6 @@ Commands:
 ```sh
 $ git clone https://github.com/mbenest/WeatherForecastUpdater.git
 $ cd WeatherForecastUpdater
-$ sh ./compile_and_execute_jar.sh <java_home_path>
+$ sh ./compile_and_execute.sh <java_home_path>
 ```
 
